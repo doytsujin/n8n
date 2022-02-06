@@ -3,14 +3,14 @@ import {
 } from 'n8n-core';
 
 import {
+	// LoggerProxy as Logger,
 	ICredentialsDecrypted,
 	ICredentialTestFunctions,
 	IDataObject,
+	INodeCredentialTestResult,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-	// LoggerProxy as Logger,
-	NodeCredentialTestResult,
 } from 'n8n-workflow';
 
 import {
@@ -101,7 +101,7 @@ export class KoBoToolbox implements INodeType {
 
 	methods = {
 		credentialTest: {
-			async koBoToolboxApiCredentialTest(this: ICredentialTestFunctions, credential: ICredentialsDecrypted): Promise<NodeCredentialTestResult> {
+			async koBoToolboxApiCredentialTest(this: ICredentialTestFunctions, credential: ICredentialsDecrypted): Promise<INodeCredentialTestResult> {
 				const credentials = credential.data;
 				try {
 					const response = await this.helpers.request({

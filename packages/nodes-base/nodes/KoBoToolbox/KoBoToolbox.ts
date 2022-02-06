@@ -150,7 +150,6 @@ export class KoBoToolbox implements INodeType {
 		const items = this.getInputData();
 		const resource  = this.getNodeParameter('resource', 0) as string;
 		const operation = this.getNodeParameter('operation', 0) as string;
-		console.log('aaa')
 
 		for (let i = 0; i < items.length; i++) {
 			// tslint:disable-next-line:variable-name - to stay consistent with the Kobo API doc conventions
